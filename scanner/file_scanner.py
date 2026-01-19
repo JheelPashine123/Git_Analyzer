@@ -19,14 +19,121 @@ SUSPICIOUS_FILES = [
 ]
 
 EXT_LANGUAGE_MAP = {
+    # Python
     '.py': 'Python',
+    '.pyw': 'Python',
+    '.pyx': 'Python',
+    
+    # JavaScript & TypeScript
     '.js': 'JavaScript',
+    '.mjs': 'JavaScript',
+    '.cjs': 'JavaScript',
     '.ts': 'TypeScript',
+    '.tsx': 'TypeScript',
+    '.jsx': 'JavaScript',
+    
+    # Java & JVM
     '.java': 'Java',
+    '.kt': 'Kotlin',
+    '.scala': 'Scala',
+    '.groovy': 'Groovy',
+    
+    # Go
     '.go': 'Go',
+    
+    # Rust
+    '.rs': 'Rust',
+    
+    # Ruby
     '.rb': 'Ruby',
+    '.erb': 'Ruby (ERB)',
+    
+    # PHP
     '.php': 'PHP',
+    '.phtml': 'PHP',
+    
+    # C/C++
+    '.c': 'C',
+    '.h': 'C',
+    '.cpp': 'C++',
+    '.cc': 'C++',
+    '.cxx': 'C++',
+    '.hpp': 'C++',
+    '.hh': 'C++',
+    
+    # C#
+    '.cs': 'C#',
+    
+    # Swift
     '.swift': 'Swift',
+    
+    # Objective-C
+    '.m': 'Objective-C',
+    '.mm': 'Objective-C++',
+    
+    # Shell
+    '.sh': 'Shell',
+    '.bash': 'Bash',
+    '.zsh': 'Zsh',
+    
+    # CSS/SCSS/LESS
+    '.css': 'CSS',
+    '.scss': 'SCSS',
+    '.sass': 'Sass',
+    '.less': 'LESS',
+    
+    # HTML
+    '.html': 'HTML',
+    '.htm': 'HTML',
+    
+    # SQL
+    '.sql': 'SQL',
+    
+    # Markup/Config
+    '.json': 'JSON',
+    '.yaml': 'YAML',
+    '.yml': 'YAML',
+    '.xml': 'XML',
+    '.toml': 'TOML',
+    '.ini': 'INI',
+    '.cfg': 'Config',
+    '.conf': 'Config',
+    
+    # Markdown
+    '.md': 'Markdown',
+    '.markdown': 'Markdown',
+    
+    # R
+    '.r': 'R',
+    '.R': 'R',
+    
+    # Julia
+    '.jl': 'Julia',
+    
+    # Perl
+    '.pl': 'Perl',
+    '.pm': 'Perl',
+    
+    # Lua
+    '.lua': 'Lua',
+    
+    # Dart
+    '.dart': 'Dart',
+    
+    # Elixir
+    '.ex': 'Elixir',
+    '.exs': 'Elixir',
+    
+    # Haskell
+    '.hs': 'Haskell',
+    
+    # Clojure
+    '.clj': 'Clojure',
+    '.cljs': 'ClojureScript',
+    
+    # Dockerfile
+    'Dockerfile': 'Docker',
+    '.dockerfile': 'Docker',
 }
 
 
@@ -97,7 +204,7 @@ def scan_repo(repo_path: str):
 
             # language by extension
             _, ext = os.path.splitext(file)
-            lang = EXT_LANGUAGE_MAP.get(ext)
+            lang = EXT_LANGUAGE_MAP.get(ext) or EXT_LANGUAGE_MAP.get(file)
             if lang:
                 lang_counts[lang] += 1
 

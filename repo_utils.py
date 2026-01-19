@@ -15,9 +15,25 @@ def clone_repo(repo_url):
     if os.path.exists(repo_path):
         shutil.rmtree(repo_path)
 
-    subprocess.run(["git", "clone", repo_url, repo_path], check=True)
-
-    return repo_path
+    try:
+        result = subprocess.run(
+            ["git", "clone", repo_url, repo_path],
+            check=True,
+            capture_output=True,
+            text=True
+        )
+        return repo_path
+    except subprocess.CalledProcessError as e:
+        # Check if error is due to private repo or authentication
+        error_msg = e.stderr.lower()
+        if "permission denied" in error_msg or "authentication" in error_msg or "not found" in error_msg:
+            raise Exception(
+                "🔒 This repository appears to be **PRIVATE**. \n\n"
+                "This scanner only works with **public repositories**. "
+                "Please ensure the repository is public or provide a public URL."
+            )
+        else:
+            raise Exception(f"Failed to clone repository: {e.stderr}")
 
 def get_all_files(repo_path):
     all_files = []
@@ -28,3 +44,8 @@ def get_all_files(repo_path):
             all_files.append(full_path)
 
     return all_files
+
+def cleanup_repo(repo_path):
+    """Delete the cloned repository after scanning"""
+    if os.path.exists(repo_path):
+        shutil.rmtree(repo_path)
