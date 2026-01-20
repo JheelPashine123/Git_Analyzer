@@ -27,8 +27,9 @@ Visualization: Streamlit Charts & Metrics
 Deployment: Render
 
 ⚙️ Installation & Setup
+
 1️⃣ Clone the repository
-git clone https://github.com/JheelPashine123/Git_Analyzer.git
+git clone https://github.com/JheelPashine123/Git_Analyzer.git;
 cd Git_Analyzer
 
 2️⃣ Create virtual environment (recommended)
