@@ -29,18 +29,25 @@ Deployment: Render
 ⚙️ Installation & Setup
 
 1️⃣ Clone the repository
-git clone https://github.com/JheelPashine123/Git_Analyzer.git;
+
+git clone https://github.com/JheelPashine123/Git_Analyzer.git
+
 cd Git_Analyzer
 
 2️⃣ Create virtual environment (recommended)
+
 python -m venv venv
+
 source venv/bin/activate   # Mac/Linux
+
 venv\Scripts\activate      # Windows
 
 3️⃣ Install dependencies
+
 pip install -r requirements.txt
 
 4️⃣ Run the app
+
 streamlit run streamlit_app.py
 
 🧪 How It Works
