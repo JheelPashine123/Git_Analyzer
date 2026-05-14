@@ -1,75 +1,105 @@
-🔐 GitHub Repository Security Scanner
+# 🔐 GitHub Repository Security Scanner
 
-A developer-focused security scanning tool that analyzes public GitHub repositories to detect exposed secrets, .env files, suspicious configurations, and overall repository structure — all through an intuitive dashboard.
+A developer-focused security scanning tool that analyzes public GitHub repositories to detect exposed secrets, `.env` files, suspicious configurations, and overall repository structure — all through an intuitive dashboard.
 
-🚀 Key Features
+---
 
-🔍 Scan public GitHub repositories for security insights
+# 🚀 Key Features
 
-🛡️ Detect common security risks and unsafe patterns
+- 🔍 Scan public GitHub repositories for security insights
 
-📊 Repository-level security overview
+- 🛡️ Detect common security risks and unsafe patterns
 
-⚡ Fast, automated analysis
+- 📊 Repository-level security overview
 
-🌐 Easy-to-use web interface built with Streamlit
+- ⚡ Fast, automated analysis
 
-🛠️ Tech Stack
+- 🌐 Easy-to-use web interface built with Streamlit
 
-Language: Python
+---
 
-UI: Streamlit
+# 🛠️ Tech Stack
 
-Analysis: Regex-based Static Code Analysis
+- **Language:** Python
 
-Visualization: Streamlit Charts & Metrics
+- **UI:** Streamlit
 
-Deployment: Render
+- **Analysis:** Regex-based Static Code Analysis
 
-⚙️ Installation & Setup
+- **Visualization:** Streamlit Charts & Metrics
 
-1️⃣ Clone the repository
+- **Deployment:** Render
 
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone the repository
+
+```bash
 git clone https://github.com/JheelPashine123/Git_Analyzer.git
 
 cd Git_Analyzer
+```
 
-2️⃣ Create virtual environment (recommended)
+---
 
+## 2️⃣ Create virtual environment (recommended)
+
+### macOS / Linux
+
+```bash
 python -m venv venv
 
-source venv/bin/activate   # Mac/Linux
+source venv/bin/activate
+```
 
-venv\Scripts\activate      # Windows
+### Windows
 
-3️⃣ Install dependencies
+```bash
+venv\Scripts\activate
+```
 
+---
+
+## 3️⃣ Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Run the app
+---
 
+## 4️⃣ Run the app
+
+```bash
 streamlit run streamlit_app.py
+```
 
-🧪 How It Works
+---
 
-User enters a public GitHub repository URL
+# 🧪 How It Works
 
-The repo is cloned temporarily
+1️⃣ User enters a public GitHub repository URL
 
-Files are scanned for:
+2️⃣ The repository is cloned temporarily
 
-Secrets
+3️⃣ Files are scanned for:
 
-Sensitive files
+- Secrets
 
-Configurations
+- Sensitive files
 
-A security report is generated
+- Unsafe configurations
 
-Repo is cleaned up automatically
+4️⃣ A security report is generated
 
-Results are shown in an interactive dashboard
+5️⃣ Repository data is cleaned automatically
 
-👤 Author
+6️⃣ Results are displayed in an interactive dashboard
 
-Developed by Jheel Pashine
+---
+
+# 👤 Author
+
+Developed by **Jheel Pashine**
